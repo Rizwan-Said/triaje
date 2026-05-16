@@ -10,7 +10,7 @@ use App\Http\Controllers\AtencionController;//atencion
 use App\Http\Controllers\PanelController;//panel de control para profesor
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-/*use Illuminate\Support\Facades\DB;*/ //es para crear el primer profesor
+use Illuminate\Support\Facades\DB;*/ //es para crear el primer profesor
 
 
 Route::get('/pacientes/{id}', [PacienteController::class, 'show'])->name('pacientes.show');
@@ -35,7 +35,7 @@ Route::post('/registro', [AuthController::class, 'registro'])->name('registro.po
 Route::get('/mis-feedbacks', [AtencionController::class, 'misFeedbacks']); //vista para que el alumno vea los feedbacks de sus pacientes
 Route::get('/mis-feedbacks/{id}', [AtencionController::class, 'verFeedback']); //vista para que el alumno vea el detalle de un feedback específico de uno de sus pacientes
 
-/*
+
 Route::get('/crear-profesor', function () {
     DB::table('users')->updateOrInsert(
         ['email' => 'profesor@correo.com'],
@@ -47,7 +47,7 @@ Route::get('/crear-profesor', function () {
     );
 
     return "Profesor creado correctamente";
-});*/  //es para crear profesor, desde sql no admitia hash.
+});  //es para crear profesor, desde sql no admitia hash.
 
 
 
