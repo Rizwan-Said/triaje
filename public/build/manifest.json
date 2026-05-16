@@ -1,0 +1,65 @@
+{
+  "resources/css/admision.css": {
+    "file": "assets/admision-CvZfjpsC.css",
+    "src": "resources/css/admision.css",
+    "isEntry": true,
+    "name": "admision",
+    "names": [
+      "admision.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DX4SLkBq.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/atencion.css": {
+    "file": "assets/atencion-B2FSTCVe.css",
+    "src": "resources/css/atencion.css",
+    "isEntry": true,
+    "name": "atencion",
+    "names": [
+      "atencion.css"
+    ]
+  },
+  "resources/css/mts.css": {
+    "file": "assets/mts-BphozqR1.css",
+    "src": "resources/css/mts.css",
+    "isEntry": true,
+    "name": "mts",
+    "names": [
+      "mts.css"
+    ]
+  },
+  "resources/css/panel.css": {
+    "file": "assets/panel-CHJK_pbn.css",
+    "src": "resources/css/panel.css",
+    "isEntry": true,
+    "name": "panel",
+    "names": [
+      "panel.css"
+    ]
+  },
+  "resources/css/triaje.css": {
+    "file": "assets/triaje-BTBLtV4P.css",
+    "src": "resources/css/triaje.css",
+    "isEntry": true,
+    "name": "triaje",
+    "names": [
+      "triaje.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-C9RdPRw2.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DX4SLkBq.css"
+    ]
+  }
+}

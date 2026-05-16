@@ -1,0 +1,26 @@
+/* Admision page styles */
+
+/* formulario grupos */
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.grupo label {
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.acciones a,
+.acciones button {
+    width: 220px;
+    height: 60px;
+}

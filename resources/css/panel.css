@@ -1,0 +1,22 @@
+
+/* separación extra del menú */
+.menu {
+    margin-top: 30px;
+}
+
+/* cabecera más grande en panel */
+.cabecera {
+    text-align: center;
+}
+
+/* ajuste tarjetas diferenciar panel */
+.card {
+    width: 240px;
+}
+
+
+.cabecera h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
