@@ -60,11 +60,11 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 8080
 
-# Entrypoint: clear caches, run migrations, then start services
+# Entrypoint: run migrations first, then clear caches and start services
 CMD ["sh", "-c", \
-    "php artisan config:clear && \
+    "php artisan migrate --force && \
+     php artisan config:clear && \
      php artisan cache:clear && \
      php artisan optimize:clear && \
-     php artisan migrate --force && \
      php artisan optimize && \
      supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
