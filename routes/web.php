@@ -35,6 +35,7 @@ Route::get('/mis-feedbacks', [AtencionController::class, 'misFeedbacks']); //vis
 Route::get('/mis-feedbacks/{id}', [AtencionController::class, 'verFeedback']); //vista para que el alumno vea el detalle de un feedback específico de uno de sus pacientes
 
 
+/*
 Route::get('/crear-profesor', function () {
     DB::table('users')->updateOrInsert(
         ['email' => 'profesor@correo.com'],
@@ -46,7 +47,7 @@ Route::get('/crear-profesor', function () {
     );
 
     return "Profesor creado correctamente";
-});  //es para crear profesor, desde sql no admitia hash.
+}); */ //es para crear profesor, desde sql no admitia hash.
 
 
 
