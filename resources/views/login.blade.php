@@ -15,8 +15,12 @@
         @endif
         <form method="POST" action="/login">
             @csrf
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
             <button type="submit">Entrar</button>
         </form>
         <div class="linkRegistro">
