@@ -7,29 +7,31 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="cajaLogin">
-        <h1>Sistema de Triaje</h1>
-        <h2>Iniciar Sesión</h2>
-        @if(session('error'))
-            <p class="error">{{ session('error') }}</p>
-        @endif
-        <form method="POST" action="/login">
-            @csrf
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
+    <main>
+        <div class="cajaLogin">
+            <h1>Sistema de Triaje</h1>
+            <h2>Iniciar Sesión</h2>
+            @if(session('error'))
+                <p class="error">{{ session('error') }}</p>
+            @endif
+            <form method="POST" action="/login">
+                @csrf
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
 
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
 
-            <button type="submit">Entrar</button>
-        </form>
-        <div class="linkRegistro">
-            ¿Eres alumno y no tienes cuenta?<br>
-            Contacta con tu Profesor
+                <button type="submit">Entrar</button>
+            </form>
+            <div class="linkRegistro">
+                ¿Eres alumno y no tienes cuenta?<br>
+                Contacta con tu Profesor
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9em; color: #95a5a6;">
+                Solo la profesora puede crear cuentas.
+            </p>
         </div>
-        <p style="margin-top: 30px; font-size: 0.9em; color: #95a5a6;">
-            Solo la profesora puede crear cuentas.
-        </p>
-    </div>
+    </main>
 </body>
 </html>
