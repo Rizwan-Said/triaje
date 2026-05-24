@@ -62,20 +62,24 @@ Route::get('/panel', function () { //dirige a la ruta del panel
     if (session('rol') != 'profesor') {
         return redirect('/');
     }
-
+    $buscar = request('buscar');
     $pacientes = DB::table('pacientes')
         ->leftJoin('triajes', 'pacientes.id', '=', 'triajes.paciente_id')
         ->leftJoin('atenciones', 'pacientes.id', '=', 'atenciones.paciente_id')
+
         ->where('pacientes.alumno_id', session('usuario_id'))
-        ->select(
-            'pacientes.*',
-            'triajes.categoria',
-            'triajes.hora_triaje',
-            DB::raw('IF(atenciones.id IS NULL, "Pendiente", "Atendido") as estado')
-        )
+        ->select('pacientes.*', 'triajes.categoria', 'triajes.hora_triaje',
+            DB::raw('IF(atenciones.id IS NULL, "Pendiente", "Atendido") as estado'))
+
+        ->when($buscar, function ($query, $buscar) {
+            $query->where(function ($q) use ($buscar) {
+                $q->where('pacientes.nombre', 'like', "%$buscar%")
+                ->orWhere('pacientes.nhc', 'like', "%$buscar%");
+            });
+        })
+
         ->orderByDesc('pacientes.fecha_llegada')
         ->get();
-
     return view('profesor', compact('pacientes'));
 });
 
@@ -90,17 +94,22 @@ Route::get('/', function () {
     if (session('rol') != 'alumno') {
         return redirect('/panel');
     }
-
+    $buscar = request('buscar');
     $pacientes = DB::table('pacientes')
         ->leftJoin('triajes', 'pacientes.id', '=', 'triajes.paciente_id')
         ->leftJoin('atenciones', 'pacientes.id', '=', 'atenciones.paciente_id')
+
         ->where('pacientes.alumno_id', session('usuario_id'))
-        ->select(
-            'pacientes.*',
-            'triajes.categoria',
-            'triajes.hora_triaje',
-            DB::raw('IF(atenciones.id IS NULL, "Pendiente", "Atendido") as estado')
-        )
+        ->select('pacientes.*', 'triajes.categoria', 'triajes.hora_triaje',
+            DB::raw('IF(atenciones.id IS NULL, "Pendiente", "Atendido") as estado'))
+
+        ->when($buscar, function ($query, $buscar) {
+            $query->where(function ($q) use ($buscar) {
+                $q->where('pacientes.nombre', 'like', "%$buscar%")
+                ->orWhere('pacientes.nhc', 'like', "%$buscar%");
+            });
+        })
+
         ->orderByDesc('pacientes.fecha_llegada')
         ->get();
 

@@ -20,3 +20,30 @@
     font-weight: 700;
     color: white;
 }
+
+.busqueda {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.busqueda form {
+    display: flex;
+    gap: 10px;
+}
+
+.busqueda input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 260px;
+}
+
+.buscar-btn {
+    background: #2c3e50;
+    color: white;
+}
+
+.buscar-btn:hover {
+    background: #1f2d3d;
+}

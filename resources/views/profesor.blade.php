@@ -47,6 +47,14 @@
             <div class="panel-pacientes">
 
                 <h2>Tus pacientes</h2>
+                
+                <div class="busqueda">
+                    <form method="GET" action="/panel">
+                        <label for="buscar" class="sr-only">Buscar paciente</label>
+                        <input type="text" id="buscar" name="buscar" placeholder="Buscar por nombre o NHC" value="{{ request('buscar') }}">
+                        <button type="submit" class="btn buscar-btn">Buscar</button>
+                    </form>
+                </div>
 
                 <table class="tabla">
 
