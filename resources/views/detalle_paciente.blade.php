@@ -56,9 +56,7 @@
             <h2>Clasificación del triaje</h2>
 
             @if($esPropio)
-                <a href="/triaje/{{ $paciente->id }}" class="btn volver">
-                    Modificar triaje
-                </a>
+                <a href="/triaje/{{ $paciente->id }}" class="btn volver">Modificar triaje</a>
             @endif
 
             @if($triaje)
@@ -90,21 +88,10 @@
 
                 <h3>Observaciones clínicas</h3>
                 <p><strong>Vómitos:</strong> {{ $triaje?->vomitos ? 'Sí' : 'No' }} </p>
-
-                <p> <strong>Deposiciones:</strong>
-                    {{ $triaje?->deposiciones ? 'Sí' : 'No' }} </p>
-
-                <p>
-                    <strong>Diuresis:</strong>
-                    {{ $triaje?->diuresis ? 'Sí' : 'No' }}
-                </p>
-
-                <p><strong>Motivo consulta:</strong>
-                    {{ $triaje?->motivo_consulta ?? '-' }}
-                </p>
-                <p><strong>Observaciones:</strong>
-                    {{ $triaje?->observaciones ?? '-' }}
-                </p>
+                <p> <strong>Deposiciones:</strong> {{ $triaje?->deposiciones ? 'Sí' : 'No' }} </p>
+                <p><strong>Diuresis:</strong> {{ $triaje?->diuresis ? 'Sí' : 'No' }}</p>
+                <p><strong>Motivo consulta:</strong> {{ $triaje?->motivo_consulta ?? '-' }}</p>
+                <p><strong>Observaciones:</strong> {{ $triaje?->observaciones ?? '-' }}</p>
             @else
                 <p class="mensaje error">Sin triaje registrado.</p>
             @endif
@@ -116,17 +103,9 @@
             <h2>Atención médica</h2>
             @if($esPropio)
                 @if($triaje && $triaje->categoria && $triaje->flujo)
-
-                    <a href="/atencion/{{ $paciente->id }}" class="btn volver">
-                        Modificar atención
-                    </a>
-
+                    <a href="/atencion/{{ $paciente->id }}" class="btn volver"> Modificar atención </a>
                 @else
-
-                    <span class="btn bloqueado">
-                        Primero debe realizarse el triaje
-                    </span>
-
+                    <span class="btn bloqueado"> Primero debe realizarse el triaje </span>
                 @endif
             @endif
 
