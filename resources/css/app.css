@@ -326,6 +326,50 @@ textarea:focus {
     margin-bottom: 8px;
 }
 
+.busqueda {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.busqueda form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.busqueda input {
+    width: 240px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.buscar-btn,
+.busqueda .volver {
+    height: 55px;
+    min-width: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
 
