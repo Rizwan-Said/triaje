@@ -31,7 +31,7 @@
         </form>
 
         <div class="linkRegistro">
-            <a href="{{ url('/login') }}">Volver al login</a>
+            <a href="{{ url('/login') }}">Volver</a>
         </div>
     </div>
 

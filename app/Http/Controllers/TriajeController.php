@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class TriajeController extends Controller
 {
-    public function ver($id)
+    public function ver($id) //recoge el triaje existente
     {
         $paciente = DB::table('pacientes')->where('id', $id)->first();
         $triaje = DB::table('triajes')

@@ -56,7 +56,9 @@
             <h2>Clasificación del triaje</h2>
 
             @if($esPropio)
-                <a href="/triaje/{{ $paciente->id }}" class="btn volver">Modificar triaje</a>
+                <a href="/triaje/{{ $paciente->id }}" class="btn volver">
+                    {{ $triaje ? 'Modificar triaje' : 'Registrar triaje' }}</a>
+
             @endif
 
             @if($triaje)
@@ -88,7 +90,7 @@
 
                 <h3>Observaciones clínicas</h3>
                 <p><strong>Vómitos:</strong> {{ $triaje?->vomitos ? 'Sí' : 'No' }} </p>
-                <p> <strong>Deposiciones:</strong> {{ $triaje?->deposiciones ? 'Sí' : 'No' }} </p>
+                <p><strong>Deposiciones:</strong>{{ $triaje?->deposiciones ?? '-' }}</p>
                 <p><strong>Diuresis:</strong> {{ $triaje?->diuresis ? 'Sí' : 'No' }}</p>
                 <p><strong>Motivo consulta:</strong> {{ $triaje?->motivo_consulta ?? '-' }}</p>
                 <p><strong>Observaciones:</strong> {{ $triaje?->observaciones ?? '-' }}</p>
